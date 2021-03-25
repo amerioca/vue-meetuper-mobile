@@ -4,28 +4,40 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
+    "web": "expo start --web",
     "eject": "expo eject",
-    "server": "npm run start --prefix server"
+    "server": "npm run start --prefix server",
+    "build:android": "expo build:android"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "expo": "^32.0.0",
-    "jwt-decode": "^2.2.0",
-    "moment": "^2.24.0",
-    "native-base": "^2.12.1",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-navigation": "^3.6.1",
-    "vue-native-core": "0.0.8",
-    "vue-native-helper": "0.0.10",
-    "vuelidate": "^0.7.4",
-    "vuex": "^3.1.0"
+    "@react-navigation/drawer": "^5.12.4",
+    "@react-navigation/native": "^5.9.3",
+    "axios": "^0.21.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "expo": "~40.0.0",
+    "expo-status-bar": "~1.0.3",
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.1",
+    "native-base": "^2.15.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-paper": "^4.7.2",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-screens": "^2.18.1",
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-web": "~0.13.12",
+    "react-native-windows": "^0.63.22",
+    "vue-native-core": "^0.2.0",
+    "vue-native-helper": "^0.2.0",
+    "vue-native-router": "^0.2.0",
+    "vuelidate": "^0.7.6",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
-    "babel-preset-expo": "^5.0.0",
-    "vue-native-scripts": "0.0.14"
+    "@babel/core": "^7.13.8",
+    "vue-native-scripts": "^0.2.0"
   },
   "private": true
 }

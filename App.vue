@@ -1,29 +1,28 @@
 <template>
-  <App v-if="isAppReady" />
+    <App v-if="isAppReady" />
 </template>
-
 <script>
-  import { Font } from 'expo';
-  import { Ionicons } from '@expo/vector-icons';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 
-  import App from './src'
-  export default {
+import App from './src'
+export default {
     components: {
-      App
+        App
     },
-    data () {
-      return {
-        isAppReady: false
-      }
+    data() {
+        return {
+            isAppReady: false
+        }
     },
-    async created () {
-      await Font.loadAsync({
-        'Roboto': require('native-base/Fonts/Roboto.ttf'),
-        'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-        ...Ionicons.font,
-      });
+    async created() {
+        await Font.loadAsync({
+            'Roboto': require('native-base/Fonts/Roboto.ttf'),
+            'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+            ...Ionicons.font,
+        });
 
-      this.isAppReady = true
+        this.isAppReady = true
     }
-  }
+}
 </script>

@@ -1,84 +1,83 @@
 <template>
-  <root>
-    <AppNavigation />
-  </root>
+    <root>
+        <AppNavigation />
+    </root>
 </template>
-
 <script>
-  import HomeScreen from '@/screens/HomeScreen'
-  import MeetupDetailScreen from '@/screens/MeetupDetailScreen'
-  import MeetupCreateScreen from '@/screens/MeetupCreateScreen'
-  import LoginScreen from '@/screens/LoginScreen'
-  import RegisterScreen from '@/screens/RegisterScreen'
+import HomeScreen from '@/screens/HomeScreen'
+import MeetupDetailScreen from '@/screens/MeetupDetailScreen'
+import MeetupCreateScreen from '@/screens/MeetupCreateScreen'
+import LoginScreen from '@/screens/LoginScreen'
+import RegisterScreen from '@/screens/RegisterScreen'
 
-  import Screen1 from '@/screens/Screen1'
-  import Screen2 from '@/screens/Screen2'
-  import Screen3 from '@/screens/Screen3'
-  import { Root } from "native-base";
+import Screen1 from '@/screens/Screen1'
+import Screen2 from '@/screens/Screen2'
+import Screen3 from '@/screens/Screen3'
+import { Root } from "native-base";
 
-  import { createStackNavigator,
-           createBottomTabNavigator,
-           createDrawerNavigator,
-           createSwitchNavigator,
-           createAppContainer } from 'react-navigation'
+import {
+    createStackNavigator,
+    createBottomTabNavigator,
+    createDrawerNavigator,
+    createSwitchNavigator,
+    createAppContainer
+} from 'vue-native-router'
 
-  const HomeStack = createStackNavigator(
-    {
-      Home: HomeScreen,
-      Meetup: MeetupDetailScreen,
-      MeetupCreate: MeetupCreateScreen,
-      ScreenOne: Screen1
-    },
-    {
-      initialRouteName: 'Home',
-      headerMode: 'none',
-      navigationOptions: {
+const HomeStack = createStackNavigator({
+    Home: HomeScreen,
+    Meetup: MeetupDetailScreen,
+    MeetupCreate: MeetupCreateScreen,
+    ScreenOne: Screen1
+}, {
+    initialRouteName: 'Home',
+    headerMode: 'none',
+    navigationOptions: {
         headerVisible: false
-      }
     }
-  )
+})
 
-  const AuthStack = createStackNavigator({
+const AuthStack = createStackNavigator({
     Login: LoginScreen,
     Register: RegisterScreen
-  })
+})
 
-  const SomeOtherStack = createStackNavigator({
+const SomeOtherStack = createStackNavigator({
     Screen2
-  },{
+}, {
     headerMode: 'none',
     navigationOptions: {
-      headerVisible: false
+        headerVisible: false
     }
-  })
+})
 
-  const SomeOtherOtherStack = createStackNavigator({
+const SomeOtherOtherStack = createStackNavigator({
     Screen3
-  },{
+}, {
     headerMode: 'none',
     navigationOptions: {
-      headerVisible: false
+        headerVisible: false
     }
-  })
+})
 
-  const DrawerNavigation = createDrawerNavigator({
+const DrawerNavigation = createDrawerNavigator({
     DrawerStack1: SomeOtherStack,
     DrawerStack2: SomeOtherOtherStack
-  })
+})
 
-  const TabNavigation = createBottomTabNavigator({
+const TabNavigation = createBottomTabNavigator({
     Meetups: HomeStack,
     Other: DrawerNavigation
-  })
+})
 
-  const AppNavigation = createAppContainer(createSwitchNavigator({
+const AppNavigation = createAppContainer(createSwitchNavigator({
     auth: AuthStack,
     tabs: TabNavigation
-  }))
+}))
 
-  export default {
+export default {
     components: {
-      AppNavigation, Root
+        AppNavigation,
+        Root
     }
-  }
+}
 </script>
